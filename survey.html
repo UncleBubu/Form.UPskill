@@ -1,0 +1,255 @@
+<!-- Ebuka Ofor(WD)
+ REGISTRATION FORM -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Application Form</title>
+</head>
+<body>
+    <style>
+        body {
+        margin: 0;
+        padding: 0;
+        font-family: 'Segoe UI', sans-serif;
+        background-color: #f5f7fa;
+        color: #333;
+    }
+
+    h1, h4, p {
+        text-align: center;
+        color: #2c3e50;
+    }
+
+    form {
+        max-width: 600px;
+        margin: 30px auto;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    label {
+        display: block;
+        margin-top: 15px;
+        font-weight: 500;
+        text-align: left;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea,
+    input[type="file"],
+    input[type="range"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-sizing: border-box;
+        font-size: 14px;
+    }
+
+    input[type="checkbox"],
+    input[type="radio"] {
+        margin-right: 8px;
+    }
+
+    button,
+    input[type="submit"] {
+        margin-top: 20px;
+        padding: 12px 20px;
+        background-color: #3498db;
+        color: white;
+        border: none;
+        border-radius: 6px;
+        font-size: 16px;
+        cursor: pointer;
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    button:hover,
+    input[type="submit"]:hover {
+        background-color: #2980b9;
+    }
+
+    hr {
+        margin: 30px 0 20px;
+        border: none;
+        border-top: 1px solid #ddd;
+    }
+
+    .required-star {
+        color: red;
+    }
+
+    #interest-section,
+    #skill-section {
+        display: none;
+        text-align: left;
+        margin-top: 10px;
+    }
+
+    @media (max-width: 600px) {
+        form {
+            padding: 20px;
+        }
+    }
+
+    </style>
+    <script>
+        //Function for intrest dropdown/button
+        function toggleInterest() {
+            var section = document.getElementById('interest-section');
+            // Toggle interest-section
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+        // Function for skill dropdown/button
+        function toggleskill(){
+            var section = document.getElementById('skill-section');
+            
+            if (section.style.display === 'none' || section.style.display === '') {
+                section.style.display = 'block';
+            } else {
+                section.style.display = 'none';
+            }
+        }
+        
+        function updateValue() {
+             var slider = document.getElementById("mula");
+             var display = document.getElementById("displayValue");
+             display.textContent = parseInt(slider.value).toLocaleString();
+  }
+
+    </script>
+    <H1>APPLICATION FORM</H1>
+    <p>Please fill out the form below to register.</p>
+    <!-- Form to collect user information -->
+     <!-- Beginning of the form container, setting of parametres    -->
+
+    <form  id="regform" 
+    action="https://formsubmit.co/chukwuebukaofor@gmail.com"
+    method="post"
+    enctype="multipart/form-data"
+    target="_blank">
+
+    <input type="hidden" name="_captcha" value="true">
+    <input type="hidden" name="_next" value="Thanks.html">
+
+        <!-- Input fields for user input -->
+
+        <!-- Personal Information Section -->
+         <hr>
+        <h4>Personal Information</h4>
+        <hr>
+        <label for="fname">Name <span class="required-star">*</span> </label>
+        <input type="text" id="fname" name="name" placeholder="e.g John Doe" required>
+        <br><br>
+
+        <label for="dob">Date of Birth <span class="required-star">*</span></label>
+        <input type="date" id="dob" name="dob" required>
+        <br><br>
+
+        <label for="number">Phone Number</label>
+        <input type="tel" id="number" name="phone" placeholder="e.g +234 123 4567" required>
+        <br><br>
+
+        <label for="email">Email </label>
+        <input type="email" id="email" name="email" placeholder="e.g wazobia@example.com" required>
+        <br><br>
+
+        <label>Gender <span class="required-star">*</span></label>
+        <label for="gender-male">
+            <input type="radio" id="gender-male" name="gender" value="Male" required>
+            Male
+        </label>
+        <label for="gender-female">
+            <input type="radio" id="gender-female" name="gender" value="Female" required>
+            Female
+        </label>
+        <br><br>
+
+        <button type="button" onclick="toggleInterest()">Select Field of Interest</button>
+
+            <div id="interest-section">
+                <label><input type="checkbox" name="interest[]" value="technology"> Technology</label><br>
+                <label><input type="checkbox" name="interest[]" value="engineering"> Engineering</label><br>
+                <label><input type="checkbox" name="interest[]" value="art"> Art</label><br>
+                <label><input type="checkbox" name="interest[]" value="science"> Science</label><br>
+                <label><input type="checkbox" name="interest[]" value="business"> Business</label><br>
+            </div>
+            <br><br>
+
+
+        <!-- Position Details -->
+        <!-- Checkbox for selecting field of interest -->
+
+         <!-- Dropdown for available positions -->
+        <hr>
+        <h4>Position Details</h4>
+        <hr>
+
+        <label for="available_positions">Available Jobs<span class="required-star">*</span></label></label>
+        <select id="available_positions" name="available_positions" required>
+            <option value="">Select</option>
+            <option value="Web Development">Web Developer</option>
+            <option value="Data Science">Data Scientist</option>
+            <option value="Machine Learning">Machine Learning/ AI Operator</option>
+            <option value="Cyber Security">Cyber Security Officer</option>
+        </select>
+        <br><br>
+
+        <label for="resume">Possible Resumption Date</label>
+        <input type="date" id="resume" name="resume" required>
+        <br><br>
+
+        <input type="range" name="mula" min="100000" max="1000000" value="10000" id="mula" oninput="updateValue()">
+        <label for="mula">Expected Salary (₦) <span id="displayValue">100,000</span></label>
+        <br><br>
+
+        <!-- SKills -->
+        <hr>
+        <h4>Skills and Qualifications</h4>
+        <hr>
+
+        <label for="pdf">CV Upload</label>
+        <input type="file" id="pdf" name="pdf" accept=".pdf,.doc,.docx" required>
+        <br><br>
+
+        <button type="button" onclick="toggleskill()">Hard Skills</button>
+
+            <div id="skill-section">
+                <label><input type="checkbox" name="skill[]" value="Web Development"> Web Development</label><br>
+                <label><input type="checkbox" name="skill[]" value="Cyber security"> Cyber Security</label><br>
+                <label><input type="checkbox" name="skill[]" value="Data Engineering"> Data Engineering</label><br>
+                <label><input type="checkbox" name="skill[]" value="Software Engineering"> Software Engineering</label><br>
+                <label><input type="checkbox" name="skill[]" value="Machine Learning"> Machine Learning</label><br>
+
+            </div>
+            <br><br>
+
+            
+
+
+
+        <label for="message">Profile</label>
+        <br>
+        <textarea name="Profile" id="profile" cols="30" rows="10" placeholder="Tell us about yourself"></textarea>
+        
+        <br><br>
+
+        <input type="submit" value="submit"
+        >
+
+    </form>
+</body>
+</html>
